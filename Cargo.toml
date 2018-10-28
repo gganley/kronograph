@@ -1,0 +1,6 @@
+[package]
+name = "kronograph"
+version = "0.1.0"
+authors = ["gganley <gganley@student.bridgew.edu>"]
+
+[dependencies]
