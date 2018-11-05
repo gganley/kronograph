@@ -2,5 +2,12 @@
 name = "kronograph"
 version = "0.1.0"
 authors = ["gganley <gganley@student.bridgew.edu>"]
+edition = "2018"
+
 
 [dependencies]
+rocket = { git = "https://github.com/SergioBenitez/Rocket", version = "0.4.0-dev" }
+rocket_codegen = { git = "https://github.com/SergioBenitez/Rocket", version = "0.4.0-dev" }
+rocket_contrib = { git = "https://github.com/SergioBenitez/Rocket", version = "0.4.0-dev" }
+serde = "1.0.80"
+serde_derive = "1.0.80"
