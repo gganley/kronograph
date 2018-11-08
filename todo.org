@@ -1,0 +1,107 @@
+* /
+** /user
+*** /add
+**** Body
+#+BEGIN_SRC json
+  {
+      "email": "gganley@student.bridgew.edu",
+      "secret": "testPass!"
+  }
+#+END_SRC
+**** Expected return
+
+#+BEGIN_SRC json
+  {
+      "email": "gganley@student.bridgew.edu",
+      "api_key": "some api key"
+  }
+#+END_SRC
+
+*** /rm
+*** /chpw
+*** /info?uid=...
+
+** /project
+*** /add
+**** Headers
+Auth: Digest /apikey/
+**** Body
+#+BEGIN_SRC json
+  {
+      "name": "Admin"
+  }
+#+END_SRC
+
+**** Expected return
+#+BEGIN_SRC json
+  {
+      "name": "Admin",
+      "created_at": "ISO 8601",
+      "pid": "some assigned UUID",
+      "uid": "the associated user"
+  }
+#+END_SRC
+*** /edit
+*** /info
+**** /meta
+This only pertains to the project itself
+**** /entries
+This returns all the entries in a particular project
+
+** /entry
+*** /add
+**** Header
+Auth: Digest /apikey/
+**** Body
+#+BEGIN_SRC json
+  {
+      "name": "Processing \"In\"",
+      "project": "Administration",
+      "tags": ["Planning"]
+  }
+#+END_SRC
+
+**** Expected return
+
+#+BEGIN_SRC json
+  {
+      "name": "Processing \"In\"",
+      "pid": "the pid for Administration",
+      "tags": ["Planning"],
+      "eid": "unique ID",
+      "created_at": "ISO 8601"
+  }
+#+END_SRC
+
+**** Notes
+
+This action should also stop any currently running timers
+
+*** /info/<eid>
+**** Header
+Auth: Digest /apikey/
+
+**** Body
+#+BEGIN_SRC json
+  {
+      "eid": "the particular eid"
+  }
+#+END_SRC
+
+**** Expected response
+#+BEGIN_SRC json
+  {
+      "name": "Processing \"In\"",
+      "pid": "the pid for Administration",
+      "tags": ["Planning"],
+      "eid": "unique ID",
+      "created_at": "ISO 8601",
+      "stopped_at": "ISO 8601"
+  }
+#+END_SRC
+
+
+*** /remove
+*** /edit
+*** /fill
+*** /hole

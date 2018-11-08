@@ -1,8 +1,7 @@
-extern crate rocket;
-extern crate rocket_contrib;
+use rocket::{get, post, put, delete};
 
-#[post("/create", format = "application/json")]
-pub fn create() {
+#[post("/add", format = "application/json")]
+pub fn add() {
 
 }
 

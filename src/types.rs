@@ -1,3 +1,5 @@
+use serde_derive::{Serialize, Deserialize};
+
 pub type ApiStore = std::collections::HashMap<String, Vec<Entry>>;
 // type ProjectID = usize;
 // type Tag = String;

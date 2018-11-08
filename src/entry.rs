@@ -1,14 +1,4 @@
-extern crate rocket;
-// extern crate rocket_contrib;
-// extern crate serde_derive;
-
-// use rocket::{State};
-// use rocket_contrib::json::{Json};
-
-// use rocket::Outcome;
-// use rocket::http::Status;
-// use rocket_contrib::json::Json;
-
+use rocket::{post, put, delete};
 
 #[post("/add", format = "application/json")]
 pub fn add() {

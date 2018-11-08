@@ -1,11 +1,7 @@
-extern crate rocket;
-extern crate rocket_contrib;
+use rocket::{get, post, delete};
 
-// use crate::types::{ApiKey};
-
-
-#[post("/create", format = "application/json")]
-pub fn create() {
+#[post("/add", format = "application/json")]
+pub fn add() {
     
 }
 
